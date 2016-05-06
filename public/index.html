@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+      <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="webapp">
+    <div class="container" ng-controller="NewsController">
+        <h2>News</h2>
+        <div class="row">
+            <div class="col-sm-2">
+                <small ng-bind='news.creatTime'></small>
+            </div>
+            <div class="col-sm-10">
+                <a href="javascript: void(0)" ng-click="openDetail(news._id)">fff{{news.title}}</a>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-detail">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" ng-bind="current.title"></h4>
+                        <span ng-bind="current.creatTime"></span>
+                    </div>
+                    <div class="modal-body">
+                        <p ng-bind="current.content"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
+  
+    <script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="webapp.js"></script>
+    <script src="service/news.client.service.js"></script>
+    <script src="controllers/news.client.controller.js"></script>
+</body>
+
+</html>

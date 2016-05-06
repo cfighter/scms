@@ -1,0 +1,6 @@
+#!D:\Program Files\nodejs node
+var app=require('../app.js');
+var config=require('../config/config.js');
+app.listen(config.port,function(){
+	console.log("server has started, listen on port:",config.port)
+});
