@@ -9,15 +9,14 @@ function NewsService($http,$q){
 		};
 		if(method==="POST"){
 			config.data=data
-		}
-		if(method==="GET"){
+		}else if(method==="GET"){
 			config.params=data
 		}
 
 		$http(config).success(function(data){
-			defered.resolved(data)
+			defered.resolve(data)
 		}).error(function(err){
-			defered.rejected(err);
+			defered.reject(err);
 		});
 		return defered.promise;
 	}
@@ -29,7 +28,7 @@ function NewsService($http,$q){
  		return handelRequest("POST",'/news',data)
  	},
  	detail:function(id){
- 		return handelRequest("GET",'/news'+id);
+ 		return handelRequest("GET",'/news/' + id);
  	}
  }
 }

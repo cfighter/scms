@@ -3,8 +3,8 @@ var News=mongoose.model('News');
 
 module.exports={
 	create:function(req,res,next){
-		var news=new News(req.body);
-		news.save(function(err){
+		var news=new News({title:"test title2",content:"test content2"});
+			news.save(function(err){
 			if(err){
 				return next(err);
 			}
@@ -37,7 +37,7 @@ module.exports={
 				return next(new Error('News not found'));
 			}
 			req.news=doc
-			return next;
+			return next();
 		});
 	},
 	get:function(req,res,next){

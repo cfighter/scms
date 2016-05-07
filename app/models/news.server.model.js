@@ -4,7 +4,7 @@ var NewsSchema=new mongoose.Schema({
 	content:String,
 	createTime:{
 		type:Date,
-		default:Date.now()
+		default:Date.now
 	}
 });
 var News=mongoose.model('News',NewsSchema);

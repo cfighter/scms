@@ -1,2 +1,2 @@
-// "use strict";
+"use strict";
 var webapp=angular.module('webapp',[]);

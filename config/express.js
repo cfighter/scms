@@ -5,7 +5,7 @@ module.exports = function() {
     var app = express();
 
     app.use(bodyParser.json());
-    app.use(express.static('../public'));
+    app.use(express.static('./public'));
     require('../app/routers/news.server.routes')(app);
     app.use(function(req, res, next) {
         res.status(404);

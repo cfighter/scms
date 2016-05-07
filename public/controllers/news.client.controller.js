@@ -1,4 +1,6 @@
-angular.module('webapp').controller('NewsController',['$scope','NewsService',NewsController]);
+angular.module('webapp')
+.controller('NewsController',['$scope','NewsService',NewsController]);
+
 function NewsController($scope,NewsService){
 	$scope.list=[];
 	$scope.current={};
@@ -6,7 +8,9 @@ function NewsController($scope,NewsService){
 	$scope.openDetail=function(id){
 
 		$scope.loadDetail(id);
+		console.log($scope.current);
 		$('#modal-detail').modal('show');
+		
 
 	};
 	$scope.loadDetail=function(id){
@@ -28,6 +32,7 @@ function NewsController($scope,NewsService){
 				
 			}
 		);
+
 	};
 	$scope.loadNews();
 }
